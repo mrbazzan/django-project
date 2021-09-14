@@ -1,8 +1,9 @@
 
 {% for order in orders%}
-<p> ORDER ID: {{order.order_id}} </p>
-<p> DATE-CREATED: {{order.date_created}} </p>
-<p> AMOUNT: {{order.total_amount}} </p>
-<p> STATUS: {{order.status}} </p>
+<p> ORDER ID: {{ order.order_id }} </p>
+<p> CUSTOMER NAME: {{ order.customer_name }} </p>
+<p> ORDER AMOUNT: {{ order.order_amount }} </p>
+<p> ORDER DATE: {{ order.order_date }} </p>
+<p> PRODUCTS SOLD: {{ order.products_sold }} </p>
    <br>
 {% endfor %}
