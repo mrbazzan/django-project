@@ -16,6 +16,14 @@
     <br>
     {% endfor %}
 
-{% endwith %}
+    <h1> TOP THREE MOST SOLD ARTICLES</h1>
 
-<h1> TOP THREE MOST SOLD ARTICLES</h1>
+    {% with article_information=orders|most_sold_article %}
+
+        {% for article in article_information %}
+            <li> {{ article }} </li>
+        {% endfor %}
+
+    {% endwith %}
+
+{% endwith %}

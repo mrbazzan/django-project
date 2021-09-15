@@ -76,3 +76,16 @@ def customer_specific_information(all_orders):
             customer_information[customer_name]['products_sold'][article] += qty
 
     return customer_information
+
+
+@register.filter('most_sold_article')
+def most_sold_article(customer_information):
+    items = {}
+    for order in customer_information:
+        for item, qty in customer_information[order]['products_sold'].items():
+            if item in items:
+                items[item] += qty
+            else:
+                items[item] = qty
+
+    return sorted(items, key=lambda x: items[x], reverse=True)
