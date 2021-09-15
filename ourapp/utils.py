@@ -63,7 +63,7 @@ def customer_specific_information():
         customer_information[customer_name]['order_date']= id['order_date']
 
         _product = {}
-        for product in id['product_sold']:
+        for product in id['products_sold']:
             if product['title'] not in _product:
                 _product[product['title']] = 0
 
@@ -75,3 +75,17 @@ def customer_specific_information():
                 customer_information[customer_name]['products_sold'][article] = qty
 
             customer_information[customer_name]['products_sold'][article] += qty
+
+    return customer_information
+
+
+def most_sold_article(customer_information):
+    items = {}
+    for order in customer_information:
+        for item, qty in customer_information[order]['products_sold'].items():
+            if item in items:
+                items[item] += qty
+            else:
+                items[item] = qty
+
+    return sorted(items, key=lambda x: items[x], reverse=True)
