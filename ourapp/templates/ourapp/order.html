@@ -1,9 +1,8 @@
 
 {% for order in orders%}
-<p> ORDER ID: {{ order.order_id }} </p>
-<p> CUSTOMER NAME: {{ order.customer_name }} </p>
+<p> CUSTOMER NAME: {{ order}} </p>
 <p> ORDER AMOUNT: {{ order.order_amount }} </p>
 <p> ORDER DATE: {{ order.order_date }} </p>
-<p> PRODUCTS SOLD: {{ order.products_sold }} </p>
+<p> PRODUCTS SOLD(qty): {{ order.products_sold() }} </p>
    <br>
 {% endfor %}
