@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_POST
+from .forms import EmailPostForm, CommentForm
 from django.core.paginator import Paginator
 from django.views.generic import ListView
 from django.core.mail import send_mail
-from .forms import EmailPostForm
+from .models import Post, Comment
 from django.http import Http404
-from .models import Post
 
 # Create your views here.
 
@@ -32,9 +32,11 @@ def post_detail(request, year, month, day, post_slug):
                              publish__month=month,
                              publish__day=day,
                              slug=post_slug)
+    comments = post.comments.filter(active=True)
+    form = CommentForm()
     return render(request,
                   'blog/post/detail.html',
-                  {'post': post})
+                  {'post': post, 'comments': comments, 'form': form})
 
 def post_share(request, post_id):
     sent = False
