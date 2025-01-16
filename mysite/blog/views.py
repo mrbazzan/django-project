@@ -6,6 +6,7 @@ from django.views.generic import ListView
 from django.core.mail import send_mail
 from .models import Post, Comment
 from django.http import Http404
+from taggit.models import Tag
 
 # Create your views here.
 
@@ -16,14 +17,18 @@ class PostListView(ListView):
     template_name = 'blog/post/list.html'
 
 
-def post_list(request):
+def post_list(request, tag_slug=None):
     posts = Post.published.all()
+    tag = None
+    if tag_slug:
+        tag = get_object_or_404(Tag, slug=tag_slug)
+        posts = posts.filter(tags__in=[tag])
     paginator = Paginator(posts, 3)
     page_number = request.GET.get('page', 1)
     page_posts = paginator.get_page(page_number)
     return render(request,
                   'blog/post/list.html',
-                  {'posts': page_posts})
+                  {'posts': page_posts, 'tag': tag})
 
 
 def post_detail(request, year, month, day, post_slug):
