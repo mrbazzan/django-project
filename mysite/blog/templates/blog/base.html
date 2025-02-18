@@ -14,6 +14,12 @@
   <div id="sidebar">
     <h2><a href={% url 'blog:post_list' %}>My blog</a></h2>
     <p>
+      <form method="get" action="{% url 'blog:post_search' %}">
+        <input name="q" type="text"></input>
+	<input type="submit" value="Search"></input>
+      </form>
+    </p>
+    <p>
       This is my blog.
       I have written {% total_posts %} so far.
     </p>
