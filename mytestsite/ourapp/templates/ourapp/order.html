@@ -1,0 +1,18 @@
+
+<h1> CUSTOMER INFORMATION </h1>
+
+ {% for name, order in orders.items %}
+ <p> CUSTOMER NAME: {{ name }} </p>
+ <p> ORDER AMOUNT: {{ order.order_amount }} </p>
+ <p> ORDER DATE: {{ order.order_date }} </p>
+ <p> PRODUCTS SOLD(qty): </p>
+    {% for article, qty in order.products_sold.items %}
+       <p>{{ article }}({{ qty }})</p>
+    {% endfor %}
+ <br>
+ {% endfor %}
+
+<h1> TOP THREE MOST SOLD ARTICLES</h1>
+{% for article in article_information %}
+   <li> {{ article }} </li>
+{% endfor %}
