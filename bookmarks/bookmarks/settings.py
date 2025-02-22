@@ -113,6 +113,14 @@ USE_I18N = True
 USE_TZ = True
 
 
+# Authentication
+
+# this is more for 2FA; incase the 'next' parameter is not set
+LOGIN_REDIRECT_URL = 'dashboard'
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
