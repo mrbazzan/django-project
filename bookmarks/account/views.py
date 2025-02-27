@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
+from .forms import LoginForm, UserRegistrationForm
 from django.http import HttpResponse
 from django.shortcuts import render
-from .forms import LoginForm
 
 # Create your views here.
 
@@ -25,6 +25,26 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'account/login.html', {'form': form})
+
+
+def register(request):
+    form = UserRegistrationForm()
+    reg_template = "account/register.html"
+    reg_data = {}
+
+    if request.method == "POST":
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save(commit=False)
+            user.set_password(form.cleaned_data["password"])
+            user.save()
+
+            reg_template = "account/register_done.html"
+            reg_data = {'new_user': user}
+
+    reg_data = {"form": form, **reg_data}
+    return render(request, reg_template, reg_data)
+
 
 @login_required
 def dashboard(request):
