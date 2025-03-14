@@ -40,9 +40,10 @@ def register(request):
             user.save()
 
             reg_template = "account/register_done.html"
-            reg_data = {'new_user': user}
+            reg_data['new_user'] = user
 
-    reg_data = {"form": form, **reg_data}
+    # when form is invalid, form is set with POST instance.
+    reg_data["form"] = form
     return render(request, reg_template, reg_data)
 
 
