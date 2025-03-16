@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'treebeard',
     'parler',
 
+    'baz',
+
     'filer',
     'easy_thumbnails',
     'djangocms_frontend',
