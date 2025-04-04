@@ -3,6 +3,7 @@ from django.contrib.auth import authenticate, login
 from .forms import LoginForm, UserRegistrationForm
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Profile
 
 # Create your views here.
 
@@ -38,6 +39,7 @@ def register(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data["password"])
             user.save()
+            Profile.objects.create(user=user)
 
             reg_template = "account/register_done.html"
             reg_data['new_user'] = user
