@@ -1,6 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm, UserRegistrationForm
+from .forms import LoginForm, UserRegistrationForm, \
+                   UserEditForm, ProfileEditForm
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import Profile
@@ -47,6 +48,26 @@ def register(request):
     # when form is invalid, form is set with POST instance.
     reg_data["form"] = form
     return render(request, reg_template, reg_data)
+
+
+@login_required
+def edit(request):
+    user_form = UserEditForm(instance=request.user)
+    profile_form = ProfileEditForm(instance=request.user.profile)
+
+    if request.method == "POST":
+        user_form = user_form.__class__(instance=request.user,
+                                        data=request.POST)
+        profile_form = profile_form.__class__(instance=request.user.profile,
+                                              data=request.POST,
+                                              files=request.FILES)
+        if user_form.is_valid() and profile_form.is_valid():
+            user_form.save()
+            profile_form.save()
+
+    return render(request,
+                  "account/edit.html",
+                  {"user_form": user_form, "profile_form": profile_form})
 
 
 @login_required
