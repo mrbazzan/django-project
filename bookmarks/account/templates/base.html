@@ -30,6 +30,20 @@
       {% endif %}
     </span>
   </div>
+
+  <div id="message">
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>
+        {{ message | safe }}
+        <a href="#">x</a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
     <div id="content">
     {% block content %}
     {% endblock %}
