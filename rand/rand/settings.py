@@ -38,6 +38,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 
+    'djangocms_picture',
     'djangocms_admin_style',
 
     'django.contrib.admin',
