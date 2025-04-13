@@ -126,6 +126,11 @@ LOGOUT_URL = 'logout'
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'account.authentication.EmailAuthBackend',
+]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
