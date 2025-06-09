@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'social_django',
+    'django_extensions',  # RunServerPlus extension in order to enable HTTPS
 ]
 
 MIDDLEWARE = [
