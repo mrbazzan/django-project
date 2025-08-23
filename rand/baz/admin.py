@@ -1,7 +1,17 @@
 from django.contrib import admin
 
-from .models import Comment, Test
+from .models import Relationship, Spouse, Comment, Test
 from .forms import TestAdminForm
+
+
+@admin.register(Relationship)
+class RelationshipAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Spouse)
+class SpouseAdmin(admin.ModelAdmin):
+    pass
 
 
 @admin.register(Test)

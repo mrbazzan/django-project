@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% for spouse in object_list %}
+  <a href="{% url 'baz:spousedetail' spouse.pk %}" >
+    <p> {{ spouse }} </p>
+  </a>
+
+  {% empty %}
+    <p> Empty </p>
+  {% endfor %}
+
+{% endblock %}

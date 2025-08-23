@@ -1,4 +1,5 @@
 from django.db import models
+from django.shortcuts import reverse
 from django.contrib.auth.models import User
 
 from djangocms_link.fields import LinkField
@@ -15,6 +16,9 @@ class Spouse(models.Model):
     name = models.CharField(max_length=100)
     link = LinkField()
     relation = models.ForeignKey(Relationship, on_delete=models.CASCADE)
+
+    def absolute_url(self):
+        return reverse("baz:spousedetail", kwargs={"pk": self.pk})
 
 
 class Test(models.Model):
