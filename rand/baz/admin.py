@@ -1,5 +1,6 @@
 from django.contrib import admin
 
+from cms.admin.placeholderadmin import FrontendEditableAdminMixin
 from .models import Relationship, Spouse, Comment, Test
 from .forms import TestAdminForm
 
@@ -10,8 +11,8 @@ class RelationshipAdmin(admin.ModelAdmin):
 
 
 @admin.register(Spouse)
-class SpouseAdmin(admin.ModelAdmin):
-    pass
+class SpouseAdmin(FrontendEditableAdminMixin, admin.ModelAdmin):
+    frontend_editable_fields = ("name",)
 
 
 @admin.register(Test)
