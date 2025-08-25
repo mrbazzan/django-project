@@ -17,6 +17,9 @@ class Spouse(models.Model):
     link = LinkField()
     relation = models.ForeignKey(Relationship, on_delete=models.CASCADE)
 
+    def get_template(self):
+        return "baz/spouse_detail.html"
+
     def absolute_url(self):
         return reverse("baz:spousedetail", kwargs={"pk": self.pk})
 
