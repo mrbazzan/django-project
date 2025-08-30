@@ -8,3 +8,5 @@ __pycache__/
 bookmarks/cert.crt
 bookmarks/cert.key
 bookmarks/google.json
+
+*
