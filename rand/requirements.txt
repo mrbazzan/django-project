@@ -1,0 +1,57 @@
+asgiref==3.9.2
+certifi==2024.8.30
+chardet==5.2.0
+charset-normalizer==3.4.0
+coverage==4.5.4
+cssselect2==0.7.0
+dj-database-url==2.2.0
+Django==4.2.19
+django-app-helper==3.3.4
+django-app-manage @ https://github.com/ojii/django-app-manage/archive/65da18ef234a4e985710c2c0ec760023695b40fe.zip#sha256=b042e22260828f8d4c5a5be3e8dd696181fdd587cf12768c95b58920e653737f
+django-better-test @ https://github.com/ojii/django-better-test/archive/8aa2407d097fe3789b74682f0e6bd7d15d449416.zip#sha256=a68e90bd59b5a0340741fc7266f26a5866aadab9a89a195ec54193a621083346
+django-classy-tags==4.1.0
+-e git+ssh://git@github.com/mrbazzan/django-cms.git@f5d2f0af18ff6fa9270b53187e7a59efeeeaad0a#egg=django_cms
+django-entangled==0.6.2
+django-filer==3.2.3
+django-formtools==2.5.1
+django-fsm==2.8.2
+django-parler==2.3
+django-polymorphic==3.1.0
+django-sekizai==4.1.0
+django-treebeard==4.7.1
+djangocms-admin-style==3.3.1
+djangocms-alias==3.0.1
+djangocms-attributes-field==4.0.0
+-e git+ssh://git@github.com/mrbazzan/djangocms-frontend.git@ee3c83d80f7da4c3953bcc91c4e6cf6307c8dc08#egg=djangocms_frontend
+-e git+ssh://git@github.com/mrbazzan/djangocms-link.git@a306a27d714bd214cbf04467a59300bde1fd7f29#egg=djangocms_link
+-e git+ssh://git@github.com/mrbazzan/djangocms-picture.git@940392d4f468dd7984bbe8c007f88f45847bb9a3#egg=djangocms_picture
+djangocms-simple-admin-style==1.1.5
+djangocms-text==0.9.3
+-e git+ssh://git@github.com/mrbazzan/djangocms-transfer.git@319b78fe2fd1acdaf96fb41a09f76d996f4d624d#egg=djangocms_transfer
+djangocms-versioning==2.4.0
+docopt==0.6.2
+easy-thumbnails==2.10
+html5lib==1.1
+idna==3.10
+iptools==0.7.0
+lxml==6.0.1
+mock==5.1.0
+nh3==0.3.0
+packaging==25.0
+pillow==11.3.0
+pyenchant==3.2.2
+pyflakes==3.2.0
+python-coveralls==2.9.3
+PyYAML==6.0.2
+reportlab==4.2.5
+requests==2.32.3
+ruff==0.7.0
+setuptools==80.9.0
+six==1.16.0
+sqlparse==0.5.1
+svglib==1.5.1
+tinycss2==1.3.0
+typing_extensions==4.12.2
+unittest-xml-reporting==3.2.0
+urllib3==2.2.3
+webencodings==0.5.1
