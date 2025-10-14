@@ -5,7 +5,7 @@ charset-normalizer==3.4.0
 coverage==4.5.4
 cssselect2==0.7.0
 dj-database-url==2.2.0
-Django==4.2.19
+Django==5.2.7
 django-app-helper==3.3.4
 django-app-manage @ https://github.com/ojii/django-app-manage/archive/65da18ef234a4e985710c2c0ec760023695b40fe.zip#sha256=b042e22260828f8d4c5a5be3e8dd696181fdd587cf12768c95b58920e653737f
 django-better-test @ https://github.com/ojii/django-better-test/archive/8aa2407d097fe3789b74682f0e6bd7d15d449416.zip#sha256=a68e90bd59b5a0340741fc7266f26a5866aadab9a89a195ec54193a621083346
@@ -23,7 +23,7 @@ djangocms-admin-style==3.3.1
 djangocms-alias==3.0.1
 djangocms-attributes-field==4.0.0
 -e git+ssh://git@github.com/mrbazzan/djangocms-frontend.git@ee3c83d80f7da4c3953bcc91c4e6cf6307c8dc08#egg=djangocms_frontend
--e git+ssh://git@github.com/mrbazzan/djangocms-link.git@a306a27d714bd214cbf04467a59300bde1fd7f29#egg=djangocms_link
+-e git+ssh://git@github.com/mrbazzan/djangocms-link.git@1586b8a2b4a8ad8765b8dcc95cf6885141fc17a6#egg=djangocms_link
 -e git+ssh://git@github.com/mrbazzan/djangocms-picture.git@940392d4f468dd7984bbe8c007f88f45847bb9a3#egg=djangocms_picture
 djangocms-simple-admin-style==1.1.5
 djangocms-text==0.9.3
