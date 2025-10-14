@@ -9,10 +9,7 @@ class GistPlugin(CMSPluginBase):
     name = "Gist"
     model = GistPluginModel
     render_template = "gist/_gist_plugin.html"  # partial template
-
-    def render(self, context, instance, placeholder):
-        context["instance"] = instance
-        return context
+    text_enabled = True
 
 
 plugin_pool.register_plugin(GistPlugin)
