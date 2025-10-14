@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'djangocms_link',
 
     'baz',
+    'gist',
 
     'filer',
     'easy_thumbnails',
