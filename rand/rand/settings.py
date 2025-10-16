@@ -56,6 +56,8 @@ INSTALLED_APPS = [
     'djangocms_alias',
     'djangocms_versioning',
 
+    'easy_select2',
+
     'sekizai',
     'treebeard',
     'parler',
