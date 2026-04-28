@@ -27,6 +27,7 @@ class GistPluginForm(forms.ModelForm, forms.TextInput):
             choices = get_choices(),
             select2attrs = {
                 "tags": "true",
+                "placeholder": "Type something...",
                 "tokenSeparators": [';', '\n' ],
                 "width": "100%",
             }
