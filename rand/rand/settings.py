@@ -56,8 +56,6 @@ INSTALLED_APPS = [
     'djangocms_alias',
     'djangocms_versioning',
 
-    'easy_select2',
-
     'sekizai',
     'treebeard',
     'parler',
@@ -195,9 +193,6 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
-
-SELECT2_USE_BUNDLED_JQUERY = False
-SELECT2_USE_BUNDLED_SELECT2 = False
 
 # This is a django CMS 4 template
 

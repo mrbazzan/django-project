@@ -20,9 +20,3 @@ Getting started with Django Framework
 - To create a superuser for the admin page
 
         python manage.py createsuperuser
-
-- In order to use the `easy_select2` package:
-
-        cd rand/
-        python manage.py collectstatic
-

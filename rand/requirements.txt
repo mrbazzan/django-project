@@ -11,7 +11,6 @@ django-app-manage @ https://github.com/ojii/django-app-manage/archive/65da18ef23
 django-better-test @ https://github.com/ojii/django-better-test/archive/8aa2407d097fe3789b74682f0e6bd7d15d449416.zip#sha256=a68e90bd59b5a0340741fc7266f26a5866aadab9a89a195ec54193a621083346
 django-classy-tags==4.1.0
 -e git+ssh://git@github.com/mrbazzan/django-cms.git@f5d2f0af18ff6fa9270b53187e7a59efeeeaad0a#egg=django_cms
-django-easy-select2==1.5.8
 django-entangled==0.6.2
 django-filer==3.2.3
 django-formtools==2.5.1
