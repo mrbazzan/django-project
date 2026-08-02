@@ -234,6 +234,9 @@ DJANGOCMS_VERSIONING_ALLOW_DELETING_VERSIONS = True
 # Add project-wide static files directory
 # https://docs.djangoproject.com/en/5.1/ref/settings/#staticfiles-dirs
 
+SELECT2_USE_BUNDLED_JQUERY = False
+SELECT2_USE_BUNDLED_SELECT2 = False
+
 STATICFILES_DIRS = [
     BASE_DIR / "rand" / "static",
 ]

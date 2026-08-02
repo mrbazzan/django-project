@@ -9,24 +9,26 @@ from easy_select2.widgets import Select2
 from .models import GistPluginModel
 
 
-class GistPluginForm(forms.ModelForm, forms.TextInput):
+class GistPluginForm(forms.ModelForm):
     class Meta:
         model = GistPluginModel
         fields = "__all__"
 
     def __init__(self, *args, **kwargs):
-        super(GistPluginForm, self).__init__(*args, **kwargs)
-
-        def get_choices():
-            qs = GistPluginModel.objects.values_list(
-                "gist_user", flat=True
-            ).distinct().order_by("gist_user")
-            return [(item, str(item)) for item in qs]
-
+        super().__init__(*args, **kwargs)
+        qs = (
+            GistPluginModel.objects
+            .exclude(gist_user="")
+            .values_list("gist_user", flat=True)
+            .distinct()
+            .order_by("gist_user")
+        )
+        choices = [("", "")] + [(item, item) for item in qs]
         self.fields["gist_user"].widget = Select2(
-            choices = get_choices(),
+            choices = choices,
             select2attrs = {
-                "tags": "true",
+                "tags": True,
+                "placeholder": "Type something...",
                 "tokenSeparators": [';', '\n' ],
                 "width": "100%",
             }
